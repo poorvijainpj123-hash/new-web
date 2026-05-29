@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="भारत | Bharat Cultural Atlas — A cultural encyclopedia of India organized by Regions and States." />
+  <title>भारत | Bharat Cultural Atlas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Josefin+Sans:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <a href="#/" class="logo" data-nav="home" aria-label="Home">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="24" cy="24" r="20" stroke="#C9A84C" stroke-width="1.2" opacity="0.6"/>
+        <circle cx="24" cy="24" r="6" fill="#E8871A" opacity="0.9"/>
+        <path d="M24 4v8M24 36v8M4 24h8M36 24h8" stroke="#C9A84C" stroke-width="1"/>
+        <path d="M10 10l5.5 5.5M32.5 32.5L38 38M38 10l-5.5 5.5M10 38l5.5-5.5" stroke="#1A6B5E" stroke-width="0.8" opacity="0.7"/>
+        <path d="M24 14c-4 0-8 3-8 8 0 6 8 12 8 12s8-6 8-12c0-5-4-8-8-8z" fill="none" stroke="#8B1A1A" stroke-width="1" opacity="0.5"/>
+      </svg>
+      <span><span class="hindi">भारत</span> Atlas</span>
+    </a>
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav" role="navigation">
+      <a href="#/" data-nav="home">Home</a>
+      <a href="#regions" data-nav="regions">Regions</a>
+      <a href="#about" data-nav="about">About</a>
+      <a href="#search" class="search-btn" aria-label="Search">🔍</a>
+    </nav>
+    <div class="header-actions">
+      <button type="button" class="lang-toggle" aria-label="Language toggle">EN / <span>हिं</span></button>
+    </div>
+  </header>
+
+  <main id="app">
+    <div id="page-home" class="page active" data-page="home">
+      <section class="hero" aria-label="Hero">
+        <div class="hero-bg"></div>
+        <div class="hero-layout">
+          <div class="hero-content">
+            <p class="hero-eyebrow">भारत Cultural Atlas</p>
+            <h1>Explore the Soul of India</h1>
+            <p class="hero-sub">28 states. 8 union territories. One living culture.</p>
+            <button type="button" class="btn-primary" id="hero-cta">Begin the Journey →</button>
+          </div>
+          <div class="hero-map-wrap" id="hero-india-map" aria-label="Interactive map of India by region"></div>
+        </div>
+        <div class="scroll-indicator" aria-hidden="true">
+          <span class="scroll-dot"></span>
+          <span>Scroll</span>
+        </div>
+      </section>
+
+      <section class="section" id="regions" aria-labelledby="regions-title">
+        <div class="section-header">
+          <h2 id="regions-title">Choose Your Region</h2>
+          <div class="gold-rule"></div>
+        </div>
+        <div class="mandala-divider" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#C9A84C" stroke-width="0.5"/><circle cx="24" cy="24" r="12" stroke="#C9A84C" stroke-width="0.5"/><circle cx="24" cy="24" r="4" fill="#C9A84C" opacity="0.5"/><path d="M24 4v40M4 24h40M8 8l32 32M40 8L8 40" stroke="#C9A84C" stroke-width="0.3" opacity="0.6"/></svg>
+        </div>
+        <div class="india-map-panel">
+          <div id="home-india-map"></div>
+          <ul class="map-legend" aria-label="Region legend">
+            <li><span style="--swatch:#8B4A9E"></span> North India</li>
+            <li><span style="--swatch:#2A8B7A"></span> North-East India</li>
+            <li><span style="--swatch:#8B1A1A"></span> East India</li>
+            <li><span style="--swatch:#C9A84C"></span> Central India</li>
+            <li><span style="--swatch:#E8871A"></span> West India</li>
+            <li><span style="--swatch:#1A6B5E"></span> South India</li>
+          </ul>
+        </div>
+        <div class="regions-grid" id="regions-grid"></div>
+      </section>
+
+      <section class="section">
+        <blockquote class="quote-block" id="daily-quote">
+          <p></p>
+          <cite></cite>
+        </blockquote>
+      </section>
+
+      <footer class="site-footer">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h4>About</h4>
+            <p>A living manuscript celebrating India's regions, states, and timeless traditions.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <a href="#/" data-nav="home">Home</a>
+            <a href="#regions">Regions</a>
+            <a href="#about" data-nav="about">About</a>
+          </div>
+          <div class="footer-col" id="footer-quote-col">
+            <h4>Cultural Note of the Day</h4>
+            <p id="footer-quote"></p>
+          </div>
+        </div>
+        <div class="footer-ornament" aria-hidden="true"><span></span>✦<span></span></div>
+        <p class="footer-bottom">Made with ❤️ for Incredible India</p>
+      </footer>
+    </div>
+
+    <div id="page-about" class="page" data-page="about">
+      <article class="about-content">
+        <nav class="breadcrumb"><a href="#/" data-nav="home">Home</a><span>›</span><span>About</span></nav>
+        <h1>About the Atlas</h1>
+        <p>
+          <strong>भारत | Bharat Cultural Atlas</strong> is a cultural encyclopedia inspired by palm-leaf manuscripts,
+          Mughal miniatures, and modern editorial design. Journey from region to state, discovering geography,
+          history, festivals, art, and the rhythms of everyday life.
+        </p>
+        <p>
+          This demo showcases North India with deep dives into Rajasthan and Punjab. Every card, gradient, and
+          ornament is crafted without stock photography—only pattern, color, and story.
+        </p>
+        <blockquote class="quote-block">
+          <p>May we see truth in diversity — एकता में अनेकता।</p>
+          <cite>— Cultural Atlas motto</cite>
+        </blockquote>
+        <button type="button" class="btn-primary" data-nav="regions">Explore Regions →</button>
+      </article>
+      <footer class="site-footer">
+        <p class="footer-bottom">Made with ❤️ for Incredible India</p>
+      </footer>
+    </div>
+
+    <div id="page-region" class="page" data-page="region"></div>
+    <div id="page-state" class="page" data-page="state"></div>
+  </main>
+
+  <script src="js/data-new.js"></script>
+  <script src="js/maps-new.js"></script>
+  <script src="js/app-new.js"></script>
+</body>
+</html>

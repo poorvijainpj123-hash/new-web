@@ -112,11 +112,12 @@ h1, h2, h3, h4 {
   align-items: center;
   justify-content: space-between;
   padding: 0 clamp(1rem, 4vw, 3rem);
-  background: rgba(13, 9, 5, 0.82);
+  background: rgba(248, 247, 245, 0.95);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+  border-bottom: 1px solid rgba(30, 144, 255, 0.1);
   transition: background var(--transition);
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .logo {
@@ -162,13 +163,13 @@ h1, h2, h3, h4 {
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--color-gold);
+  background: var(--color-accent);
   transition: width var(--transition);
 }
 
 .main-nav a:hover,
 .main-nav a.active {
-  color: var(--color-cream);
+  color: var(--color-text);
 }
 
 .main-nav a:hover::after,

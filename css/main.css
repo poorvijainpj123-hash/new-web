@@ -51,7 +51,7 @@ html {
 body {
   font-family: var(--font-body);
   background: var(--color-bg);
-  color: var(--color-cream);
+  color: var(--color-text);
   line-height: 1.65;
   overflow-x: hidden;
   min-height: 100vh;
@@ -123,7 +123,7 @@ h1, h2, h3, h4 {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  color: var(--color-cream);
+  color: var(--color-text);
   font-family: var(--font-ui);
   font-size: 0.95rem;
   font-weight: 600;
@@ -151,7 +151,7 @@ h1, h2, h3, h4 {
   font-size: 0.8rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-cream-muted);
+  color: var(--color-text-light);
   position: relative;
 }
 

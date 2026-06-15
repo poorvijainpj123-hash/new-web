@@ -70,10 +70,6 @@ const app = {
           <h3>${region.name}</h3>
           <p class="hindi">${region.hindi}</p>
           <p class="descriptor">${region.descriptor}</p>
-          <svg class="region-icon" viewBox="0 0 64 64" fill="none">
-            <circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="2"/>
-            <path d="M32 12v40M12 32h40" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
-          </svg>
           <button class="btn-explore">Explore →</button>
         </div>
       </div>

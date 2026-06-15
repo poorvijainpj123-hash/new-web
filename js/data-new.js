@@ -6,7 +6,8 @@ const ATLAS_DATA = {
       id: 'north',
       name: 'North India',
       hindi: 'उत्तर भारत',
-      color: '#8B4A9E',
+      color: '#A9A9A9',
+      background: 'mountains.jpg',
       descriptor: 'Peaks, Plains & Prayers',
       overview: 'Crowned by the Himalayas, North India is the cradle of ancient civilizations and spiritual awakening.',
       tabs: {
@@ -88,7 +89,7 @@ const ATLAS_DATA = {
       id: 'south',
       name: 'South India',
       hindi: 'दक्षिण भारत',
-      color: '#1A6B5E',
+      color: '#1E90FF',
       descriptor: 'Temples, Spices & Serenity',
       overview: 'South India is a realm of ancient temples, classical arts, and thriving traditions where spirituality and creativity flourish.',
       tabs: {
@@ -105,7 +106,7 @@ const ATLAS_DATA = {
       id: 'east',
       name: 'East India',
       hindi: 'पूर्वी भारत',
-      color: '#8B1A1A',
+      color: '#4CAF50',
       descriptor: 'Rivers, Revolutions & Resilience',
       overview: 'East India, cradled by the Ganges and enriched by the Sundarbans, is a land of historical significance and cultural depth.',
       tabs: {
@@ -122,7 +123,7 @@ const ATLAS_DATA = {
       id: 'west',
       name: 'West India',
       hindi: 'पश्चिम भारत',
-      color: '#E8871A',
+      color: '#D4A574',
       descriptor: 'Commerce, Coasts & Colors',
       overview: 'West India, where the Arabian Sea meets the land, is a vibrant blend of trade, tourism, and traditional arts.',
       tabs: {
@@ -139,7 +140,7 @@ const ATLAS_DATA = {
       id: 'central',
       name: 'Central India',
       hindi: 'मध्य भारत',
-      color: '#C9A84C',
+      color: '#B8860B',
       descriptor: 'Forests, Fortresses & Folk Wisdom',
       overview: 'Central India is the green heartland, rich with forests, tribal traditions, and historical monuments.',
       tabs: {
@@ -156,7 +157,7 @@ const ATLAS_DATA = {
       id: 'northeast',
       name: 'North-East India',
       hindi: 'उत्तर-पूर्व भारत',
-      color: '#2A8B7A',
+      color: '#2D7D4D',
       descriptor: 'Mountains, Migrations & Mysteries',
       overview: 'North-East India, with its misty mountains and diverse cultures, is a frontier of unique traditions and natural beauty.',
       tabs: {

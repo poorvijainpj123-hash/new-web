@@ -7,7 +7,6 @@ const ATLAS_DATA = {
       name: 'North India',
       hindi: 'उत्तर भारत',
       color: '#A9A9A9',
-      background: 'mountains.jpg',
       descriptor: 'Peaks, Plains & Prayers',
       overview: 'Crowned by the Himalayas, North India is the cradle of ancient civilizations and spiritual awakening.',
       tabs: {

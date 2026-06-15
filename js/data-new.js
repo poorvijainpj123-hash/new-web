@@ -156,7 +156,7 @@ const ATLAS_DATA = {
       id: 'northeast',
       name: 'North-East India',
       hindi: 'उत्तर-पूर्व भारत',
-      color: '#2A8B7A',
+      color: '#2D7D4D',
       descriptor: 'Mountains, Migrations & Mysteries',
       overview: 'North-East India, with its misty mountains and diverse cultures, is a frontier of unique traditions and natural beauty.',
       tabs: {

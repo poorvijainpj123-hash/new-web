@@ -2,17 +2,26 @@
 
 
 :root {
-  --color-bg:           #0D0905;   /* deep saffron-black — manuscript parchment */
-  --color-bg-elevated:  #1A1410;   /* slightly lighter dark */
-  --color-bg-footer:    #080604;   /* darkest accent */
-  --color-saffron:      #E8871A;   /* warm turmeric orange */
-  --color-crimson:      #8B1A1A;   /* deep crimson red */
-  --color-teal:         #1A6B5E;   /* peacock teal */
-  --color-gold:         #C9A84C;   /* warm gold highlight */
-  --color-cream:        #F2EAD3;   /* cream text on dark */
-  --color-cream-muted:  rgba(242, 234, 211, 0.65);
-  --color-charcoal:     #3C3228;   /* charcoal for secondary text */
-
+  /* Main Theme - Light & Minimal */
+  --color-bg:           #F8F7F5;   /* off-white background */
+  --color-bg-elevated:  transparent;   /* very light cream for cards */
+  --color-bg-footer:    #F0EEEB;   /* light gray footer */
+  --color-accent:       #1E90FF;   /* cool blue accent */
+  --color-accent-light: #87CEEB;   /* light sky blue */
+  
+  /* Text Colors */
+  --color-text:         #1A1A1A;   /* pure black */
+  --color-text-muted:   #666666;   /* medium gray for secondary text */
+  --color-text-light:   #999999;   /* light gray */
+  
+  /* Regional Colors - Geographical */
+  --region-north:       #8B8B8B;   /* Gray (Mountains) */
+  --region-northeast:   #2D7D4D;   /* Forest Green */
+  --region-central:     #B8860B;   /* Mineral Brown */
+  --region-west:        #D4A574;   /* Sand */
+  --region-south:       #1E90FF;   /* Ocean Blue */
+  
+  /* Typography & Spacing */
   --font-display:    'Cormorant Garamond', 'Playfair Display', Georgia, serif;
   --font-body:       'Lora', 'EB Garamond', Georgia, serif;
   --font-devanagari: 'Noto Serif Devanagari', serif;
@@ -20,10 +29,11 @@
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 16px;
-  --shadow-glow: 0 0 48px rgba(232, 135, 26, 0.35);
-  --shadow-glow-strong: 0 0 60px rgba(232, 135, 26, 0.45), 0 0 100px rgba(139, 26, 26, 0.15);
+  --shadow-glow: 0 0 48px rgba(30, 144, 255, 0.15);
+  --shadow-glow-strong: 0 0 60px rgba(30, 144, 255, 0.2), 0 0 100px rgba(30, 144, 255, 0.08);
   --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   --header-h: 72px;
+  --bg-map: url("indiamapbg.jpg");
 }
 
 *,
@@ -37,12 +47,18 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  background-image: var(--bg-map);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--color-bg);
 }
 
 body {
   font-family: var(--font-body);
-  background: var(--color-bg);
-  color: var(--color-cream);
+  background: transparent);
+  color: var(--color-text);
   line-height: 1.65;
   overflow-x: hidden;
   min-height: 100vh;
@@ -103,18 +119,19 @@ h1, h2, h3, h4 {
   align-items: center;
   justify-content: space-between;
   padding: 0 clamp(1rem, 4vw, 3rem);
-  background: rgba(13, 9, 5, 0.82);
+  background: rgba(248, 247, 245, 0.95);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+  border-bottom: 1px solid rgba(30, 144, 255, 0.1);
   transition: background var(--transition);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  color: var(--color-cream);
+  color: var(--color-text);
   font-family: var(--font-ui);
   font-size: 0.95rem;
   font-weight: 600;
@@ -142,7 +159,7 @@ h1, h2, h3, h4 {
   font-size: 0.8rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-cream-muted);
+  color: var(--color-text-light);
   position: relative;
 }
 
@@ -153,13 +170,13 @@ h1, h2, h3, h4 {
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--color-gold);
+  background: var(--color-accent);
   transition: width var(--transition);
 }
 
 .main-nav a:hover,
 .main-nav a.active {
-  color: var(--color-cream);
+  color: var(--color-text);
 }
 
 .main-nav a:hover::after,
@@ -177,25 +194,34 @@ h1, h2, h3, h4 {
   font-family: var(--font-devanagari);
   font-size: 0.75rem;
   padding: 0.35rem 0.75rem;
-  border: 1px solid rgba(201, 168, 76, 0.4);
+  border: 1px solid rgba(30, 144, 255, 0.3);
   border-radius: var(--radius-sm);
-  color: var(--color-cream-muted);
+  color: var(--color-text-light);
+  background: rgba(30, 144, 255, 0.05);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.lang-toggle:hover {
+  background: rgba(30, 144, 255, 0.1);
+  border-color: rgba(30, 144, 255, 0.5);
 }
 
 .lang-toggle span {
-  color: var(--color-gold);
+  color: var(--color-accent);
 }
 
 .search-btn {
   font-size: 1.1rem;
-  color: var(--color-cream-muted);
+  color: var(--color-text-light);
   padding: 0.25rem;
+  cursor: pointer;
+  transition: color var(--transition);
 }
 
 .search-btn:hover {
-  color: var(--color-saffron);
+  color: var(--color-accent);
 }
-
 /* ─── Pages ─── */
 .page {
   display: none;
@@ -282,11 +308,11 @@ h1, h2, h3, h4 {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 90% 70% at 50% -10%, rgba(232, 135, 26, 0.28) 0%, transparent 55%),
-    radial-gradient(ellipse 55% 45% at 15% 75%, rgba(139, 26, 26, 0.22) 0%, transparent 50%),
-    radial-gradient(ellipse 50% 40% at 88% 35%, rgba(26, 107, 94, 0.2) 0%, transparent 48%),
-    radial-gradient(ellipse 40% 35% at 70% 90%, rgba(201, 168, 76, 0.15) 0%, transparent 45%),
-    linear-gradient(165deg, #1a0e06 0%, #120a04 35%, #0D0905 70%, #0a0604 100%);
+    radial-gradient(ellipse 90% 70% at 50% -10%, rgba(30, 144, 255, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse 55% 45% at 15% 75%, rgba(30, 144, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 40% at 88% 35%, rgba(30, 144, 255, 0.06) 0%, transparent 48%),
+    radial-gradient(ellipse 40% 35% at 70% 90%, rgba(30, 144, 255, 0.04) 0%, transparent 45%),
+    linear-gradient(165deg, #F8F7F5 0%, #FEFDFB 35%, #F8F7F5 70%, #F0EEEB 100%);
 }
 
 .hero-bg::before {
@@ -318,8 +344,8 @@ h1, h2, h3, h4 {
   font-size: 0.7rem;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: #f0c96a;
-  text-shadow: 0 0 24px rgba(232, 135, 26, 0.5);
+  color: var(--color-accent);
+  text-shadow: 0 0 24px rgba(30, 144, 255, 0.15);
   margin-bottom: 1.5rem;
   opacity: 0;
   animation: fadeUp 0.8s 0.2s forwards;
@@ -327,11 +353,11 @@ h1, h2, h3, h4 {
 
 .hero h1 {
   font-size: clamp(2.5rem, 7vw, 4.5rem);
-  background: linear-gradient(135deg, #fff8e8 0%, #f2ead3 40%, #e8c878 85%, #E8871A 100%);
+  background: linear-gradient(135deg, #1A1A1A 0%, #333333 40%, #1E90FF 85%, #1E90FF 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  filter: drop-shadow(0 2px 12px rgba(232, 135, 26, 0.2));
+  filter: drop-shadow(0 2px 12px rgba(30, 144, 255, 0.15));
   margin-bottom: 1rem;
   opacity: 0;
   animation: fadeUp 0.9s 0.35s forwards;
@@ -339,13 +365,12 @@ h1, h2, h3, h4 {
 
 .hero-sub {
   font-size: clamp(1rem, 2.5vw, 1.25rem);
-  color: rgba(242, 234, 211, 0.88);
+  color: var(--color-text-light);
   max-width: 520px;
   margin: 0 auto 2.5rem;
   opacity: 0;
   animation: fadeUp 0.9s 0.5s forwards;
 }
-
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -368,20 +393,21 @@ h1, h2, h3, h4 {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   padding: 1rem 2rem;
-  color: var(--color-cream);
-  border: 1px solid var(--color-gold);
+  color: var(--color-accent);
+  border: 1.5px solid var(--color-accent);
   border-radius: var(--radius-sm);
   background: transparent;
   transition: background var(--transition), box-shadow var(--transition), color var(--transition);
   opacity: 0;
   animation: fadeUp 0.9s 0.65s forwards;
+  cursor: pointer;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, rgba(232, 135, 26, 0.35) 0%, rgba(201, 168, 76, 0.2) 100%);
-  border-color: #f0c96a;
-  box-shadow: var(--shadow-glow-strong);
-  color: #fff8e8;
+  background: rgba(30, 144, 255, 0.08);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 20px rgba(30, 144, 255, 0.25);
+  color: var(--color-accent);
 }
 
 #page-home .hero .btn-primary {
@@ -448,7 +474,7 @@ h1, h2, h3, h4 {
   font-size: 0.65rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-cream-muted);
+  color: var(--color-text-light);
   opacity: 0;
   animation: fadeUp 1s 1s forwards;
 }
@@ -457,7 +483,7 @@ h1, h2, h3, h4 {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--color-gold);
+  background: var(--color-accent);
   animation: bounce 2s infinite;
 }
 
@@ -512,7 +538,7 @@ h1, h2, h3, h4 {
 
 /* ─── India Maps ─── */
 .india-map-panel {
-  display: grid;
+  display: none;
   grid-template-columns: 1fr;
   gap: 1.5rem;
   align-items: center;
@@ -606,18 +632,18 @@ h1, h2, h3, h4 {
   min-height: 220px;
   padding: 1.75rem;
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(201, 168, 76, 0.2);
+  border: 1.5px solid rgba(30, 144, 255, 0.3);
   background: var(--color-bg-elevated);
   overflow: hidden;
   cursor: pointer;
-  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), background var(--transition);
 }
 
 .region-card::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: var(--card-gradient);
+  background: linear-gradient(135deg, rgba(30, 144, 255, 0.05) 0%, rgba(30, 144, 255, 0.02) 100%);
   opacity: 0.92;
   transition: opacity var(--transition);
 }
@@ -630,15 +656,15 @@ h1, h2, h3, h4 {
   width: 80px;
   height: 80px;
   border-bottom-left-radius: 100%;
-  border: 1px solid rgba(201, 168, 76, 0.25);
+  border: 1px solid rgba(30, 144, 255, 0.15);
   border-top: none;
   border-right: none;
 }
 
 .region-card:hover {
   transform: translateY(-8px);
-  box-shadow: var(--shadow-glow-strong);
-  border-color: var(--card-accent, var(--color-gold));
+  box-shadow: 0 12px 32px rgba(30, 144, 255, 0.2);
+  border-color: var(--card-accent, var(--color-accent));
 }
 
 .region-card:hover::before {
@@ -663,11 +689,12 @@ h1, h2, h3, h4 {
 .region-card h3 {
   font-size: 1.35rem;
   margin-bottom: 0.25rem;
+  color: var(--color-text);
 }
 
 .region-card .hindi {
   font-size: 0.95rem;
-  color: var(--color-gold);
+  color: var(--card-accent, var(--color-accent));
   margin-bottom: 0.5rem;
 }
 
@@ -675,7 +702,7 @@ h1, h2, h3, h4 {
   font-family: var(--font-body);
   font-style: italic;
   font-size: 0.9rem;
-  color: var(--color-cream-muted);
+  color: var(--color-text-light);
   margin-bottom: auto;
   padding-bottom: 1rem;
 }
@@ -685,7 +712,7 @@ h1, h2, h3, h4 {
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--card-accent, var(--color-accent));
   opacity: 0;
   transform: translateX(-8px);
   transition: opacity var(--transition), transform var(--transition);
@@ -701,8 +728,8 @@ h1, h2, h3, h4 {
   max-width: 640px;
   margin: 3rem auto;
   padding: 2rem 2.5rem;
-  border-left: 3px solid var(--color-saffron);
-  background: rgba(139, 26, 26, 0.08);
+  border-left: 3px solid var(--color-accent);
+  background: rgba(30, 144, 255, 0.05);
   position: relative;
 }
 
@@ -710,8 +737,8 @@ h1, h2, h3, h4 {
   content: '"';
   font-family: var(--font-display);
   font-size: 4rem;
-  color: var(--color-gold);
-  opacity: 0.3;
+  color: var(--color-accent);
+  opacity: 0.2;
   position: absolute;
   top: -0.5rem;
   left: 1rem;
@@ -723,6 +750,7 @@ h1, h2, h3, h4 {
   font-size: 1.35rem;
   font-style: italic;
   margin-bottom: 0.75rem;
+  color: var(--color-text);
 }
 
 .quote-block cite {
@@ -730,14 +758,14 @@ h1, h2, h3, h4 {
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-accent);
   font-style: normal;
 }
 
 /* ─── Footer ─── */
 .site-footer {
   background: var(--color-bg-footer);
-  border-top: 1px solid rgba(201, 168, 76, 0.12);
+  border-top: 1px solid rgba(30, 144, 255, 0.15);
   padding: 3rem clamp(1rem, 5vw, 4rem) 1.5rem;
   position: relative;
 }
@@ -765,14 +793,14 @@ h1, h2, h3, h4 {
   font-size: 0.75rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-accent);
   margin-bottom: 1rem;
 }
 
 .footer-col p,
 .footer-col a {
   font-size: 0.9rem;
-  color: var(--color-cream-muted);
+  color: var(--color-text-light);
   display: block;
   margin-bottom: 0.5rem;
 }
@@ -780,10 +808,10 @@ h1, h2, h3, h4 {
 .footer-bottom {
   text-align: center;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(201, 168, 76, 0.1);
+  border-top: 1px solid rgba(30, 144, 255, 0.1);
   font-family: var(--font-ui);
   font-size: 0.8rem;
-  color: var(--color-cream-muted);
+  color: var(--color-text-light);
   position: relative;
   z-index: 1;
 }
@@ -800,7 +828,7 @@ h1, h2, h3, h4 {
   flex: 1;
   max-width: 120px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
 }
 
 /* ─── Region Page ─── */

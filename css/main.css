@@ -56,8 +56,8 @@ body::before {
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
   pointer-events: none;
-  z-index: 9999;
-  opacity: 0.35;
+  z-index: -1;
+  opacity: 1;
   background-image: var(--bg-map);
   background-size: cover;
   background-position: center;
@@ -236,6 +236,11 @@ h1, h2, h3, h4 {
   justify-content: center;
   padding: 2rem clamp(1rem, 5vw, 4rem);
   overflow: hidden;
+  background: var(--color-bg-elevated);
+  border: 1px solid rgba(30, 144, 255, 0.12);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08), 0 2px 12px rgba(0, 0, 0, 0.04);
+  margin: 1.5rem;
 }
 
 .hero-layout {
@@ -276,7 +281,7 @@ h1, h2, h3, h4 {
   border-radius: var(--radius-lg);
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.35), inset 0 0 60px rgba(30, 144, 255, 0.15);
   animation: fadeUp 1s 0.5s forwards;
-  opacity: 0;
+  opacity: 1;
 }
 
 .hero-map-wrap .india-map-svg {
@@ -328,7 +333,7 @@ h1, h2, h3, h4 {
   color: #f0c96a;
   text-shadow: 0 0 24px rgba(30,144,255,0.15);
   margin-bottom: 1.5rem;
-  opacity: 0;
+  opacity: 1;
   animation: fadeUp 0.8s 0.2s forwards;
 }
 
@@ -337,10 +342,10 @@ h1, h2, h3, h4 {
   background: linear-gradient(135deg, #fff8e8 0%, #f2ead3 40%, #e8c878 85%, #E8871A 100%);
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
+   /*color: transparent;*/
   filter: drop-shadow(0 2px 12px rgba(30,144,255,0.15));
   margin-bottom: 1rem;
-  opacity: 0;
+  opacity: 1;
   animation: fadeUp 0.9s 0.35s forwards;
 }
 
@@ -349,7 +354,7 @@ h1, h2, h3, h4 {
   color: var(--color-text-light);
   max-width: 520px;
   margin: 0 auto 2.5rem;
-  opacity: 0;
+  opacity: 1;
   animation: fadeUp 0.9s 0.5s forwards;
 }
 
@@ -380,7 +385,7 @@ h1, h2, h3, h4 {
   border-radius: var(--radius-sm);
   background: transparent;
   transition: background var(--transition), box-shadow var(--transition), color var(--transition);
-  opacity: 0;
+  opacity: 1;
   animation: fadeUp 0.9s 0.65s forwards;
   cursor: pointer;
 }
@@ -518,90 +523,6 @@ h1, h2, h3, h4 {
   height: 48px;
 }
 
-/* ─── India Maps ─── */
-.india-map-panel {
-  display: none;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  align-items: center;
-  margin-bottom: 2.5rem;
-  padding: 1.5rem;
-  background: rgba(22, 16, 10, 0.85);
-  border: 1px solid rgba(201, 168, 76, 0.2);
-  border-radius: var(--radius-lg);
-  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.25);
-}
-
-@media (min-width: 768px) {
-  .india-map-panel {
-    grid-template-columns: 1fr auto;
-    gap: 2rem;
-  }
-}
-
-#home-india-map .india-map-svg {
-  width: 100%;
-  max-width: 420px;
-  margin: 0 auto;
-  display: block;
-}
-
-.map-legend {
-  list-style: none;
-  font-family: var(--font-ui);
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-text-light);
-}
-
-.map-legend li {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-bottom: 0.5rem;
-}
-
-.map-legend span {
-  width: 12px;
-  height: 12px;
-  border-radius: 2px;
-  background: var(--swatch);
-  box-shadow: 0 0 8px color-mix(in srgb, var(--swatch) 50%, transparent);
-}
-
-.map-caption {
-  font-family: var(--font-ui);
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
-  text-align: center;
-  color: var(--color-text-light);
-  margin-top: 0.75rem;
-  font-style: italic;
-}
-
-.india-map-figure {
-  margin: 0;
-}
-
-.map-zone--interactive {
-  cursor: pointer;
-  transition: fill-opacity 0.25s ease, stroke-width 0.25s ease, filter 0.25s ease;
-}
-
-.map-zone--interactive:hover,
-.map-zone--interactive.map-zone--hover,
-.map-zone--interactive:focus {
-  fill-opacity: 0.75 !important;
-  stroke: #f0c96a !important;
-  stroke-width: 2 !important;
-  filter: drop-shadow(0 0 8px rgba(30, 144, 255, 0.15));
-}
-
-.map-zone--active {
-  fill-opacity: 0.8 !important;
-}
-
 /* ─── Region Cards ─── */
 .regions-grid {
   display: grid;
@@ -615,7 +536,7 @@ h1, h2, h3, h4 {
   padding: 1.75rem;
   border-radius: var(--radius-lg);
   background: color-mix(in srgb, var(--region-color) 15%, white);
-  border: 1px solid color-mix(in srgb, var(--region-color) 30%, transparent);
+  border: 1px solid color-mix(in srgb, var(--region-color) 30%);
   overflow: hidden;
   cursor: pointer;
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
@@ -710,7 +631,7 @@ h1, h2, h3, h4 {
   margin: 3rem auto;
   padding: 2rem 2.5rem;
   border-left: 3px solid var(--color-saffron);
-  background: rgba(139, 26, 26, 0.08);
+  background: rgba(139, 26, 26, 0.35);
   position: relative;
 }
 
@@ -719,7 +640,7 @@ h1, h2, h3, h4 {
   font-family: var(--font-display);
   font-size: 4rem;
   color: var(--color-accent);
-  opacity: 0.3;
+  opacity: 1;
   position: absolute;
   top: -0.5rem;
   left: 1rem;
@@ -738,7 +659,7 @@ h1, h2, h3, h4 {
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-text);
   font-style: normal;
 }
 
@@ -972,7 +893,7 @@ h1, h2, h3, h4 {
   padding: 1rem 1.25rem;
   color: var(--color-text-light);
   white-space: nowrap;
-  border-bottom: 2px solid transparent;
+  border-bottom: 2px solid ;
   margin-bottom: -1px;
   transition: color var(--transition), border-color var(--transition);
 }
@@ -1230,7 +1151,7 @@ h1, h2, h3, h4 {
   text-transform: uppercase;
   padding: 0.5rem 0;
   color: var(--color-text-light);
-  border-left: 2px solid transparent;
+  border-left: 2px solid ;
   padding-left: 0.75rem;
   transition: color var(--transition), border-color var(--transition);
 }
@@ -1330,7 +1251,7 @@ h1, h2, h3, h4 {
 .section-divider span {
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, var(--color-accent), transparent);
+  background: linear-gradient(90deg, var(--color-accent));
 }
 
 .section-divider svg {

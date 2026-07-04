@@ -47,7 +47,13 @@ body {
   color: var(--color-text);
   line-height: 1.65;
   overflow-x: hidden;
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: fit-content;
+  background-image: var(--bg-map);
+  background-size: cover;
+  background-position: center;
+  flex: 1;
 }
 
 body::before {
@@ -58,11 +64,6 @@ body::before {
   pointer-events: none;
   z-index: -1;
   opacity: 1;
-  background-image: var(--bg-map);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
 }
 
 img, svg {
@@ -667,7 +668,7 @@ h1, h2, h3, h4 {
 .site-footer {
   background: var(--color-bg-footer);
   border-top: 1px solid rgba(201, 168, 76, 0.12);
-  padding: 3rem clamp(1rem, 5vw, 4rem) 1.5rem;
+  padding:  3rem clamp(1rem, 5vw, 4rem) 2rem;
   position: relative;
 }
 
@@ -735,12 +736,14 @@ h1, h2, h3, h4 {
 /* ─── Region Page ─── */
 .region-banner {
   position: relative;
-  padding: clamp(3rem, 10vw, 5rem) clamp(1rem, 5vw, 4rem);
+  margin-top: calc(-1 * var(--header-h));
+  padding: calc(var(--header-h) + 2rem) clamp(1rem, 5vw, 4rem) clamp(3rem, 10vw, 5rem);
   min-height: 320px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   overflow: hidden;
+  background: color-mix(in srgb, var(--region-color) 30%, white);
 }
 
 .region-banner-layout {
@@ -804,7 +807,6 @@ h1, h2, h3, h4 {
 .region-banner-bg {
   position: absolute;
   inset: 0;
-  background: var(--region-gradient);
 }
 
 .region-banner-bg::after {

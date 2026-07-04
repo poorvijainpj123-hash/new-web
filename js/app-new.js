@@ -93,18 +93,16 @@ const app = {
     const page = document.getElementById('page-region');
     
     page.innerHTML = `
-      <div class="region-header" style="--region-color: ${region.color}">
+      <div class="region-banner" style="--region-color: ${region.color}">
         <nav class="breadcrumb">
-          <a href="#/" data-nav="home">Home</a><span>›</span>
-          <span>Regions</span><span>›</span>
-          <span>${region.name}</span>
+        <a href="#/" data-nav="home">Home</a><span>›</span>
+        <span>Regions</span><span>›</span>
+        <span>${region.name}</span>
         </nav>
-        <div class="region-hero">
-          <h1>${region.name}</h1>
-          <p class="hindi">${region.hindi}</p>
-          <p class="region-overview">${region.overview}</p>
+        <h1>${region.name}</h1>
+        <p class="hindi">${region.hindi}</p>
+        <p class="region-overview">${region.overview}</p>
         </div>
-      </div>
 
       <section class="region-tabs">
         <div class="tabs-header">

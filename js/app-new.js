@@ -30,6 +30,7 @@ const app = {
     this.loadHomePage();
     this.setupScrollObserver();
     this.bindRipple();
+    this.initHeroParallax();
     document.getElementById('hero-cta').addEventListener('click', () => this.navigate('regions'));
   },
 
@@ -50,6 +51,21 @@ const app = {
       const btn = e.target.closest('.btn-primary');
       if (btn) this.createRipple(e, btn);
     });
+  },
+
+  initHeroParallax() {
+  const layout = document.querySelector('.hero-layout');
+  const bg = document.querySelector('.hero-bg');
+  if (!layout) return;
+
+  const onScroll = () => {
+    if (!document.getElementById('page-home')?.classList.contains('active')) return;
+    const y = window.scrollY;
+    layout.style.transform = `translateY(${y * 0.05}px)`;
+    if (bg) bg.style.transform = `translateY(${y * 0.025}px)`;
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
   },
 
   setupNav() {

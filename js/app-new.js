@@ -11,7 +11,27 @@ const app = {
     this.setupRouting();
     this.loadHomePage();
     this.setupScrollObserver();
+    this.bindRipple();
     document.getElementById('hero-cta').addEventListener('click', () => this.navigate('regions'));
+  },
+
+  createRipple(e, button) {
+    const rect = button.getBoundingClientRect();
+    const ripple = document.createElement('span');
+    ripple.className = 'ripple';
+    const size = Math.max(rect.width, rect.height);
+    ripple.style.width = ripple.style.height = `${size}px`;
+    ripple.style.left = `${e.clientX - rect.left - size / 2}px`;
+    ripple.style.top = `${e.clientY - rect.top - size / 2}px`;
+    button.appendChild(ripple);
+    ripple.addEventListener('animationend', () => ripple.remove());
+  },
+
+  bindRipple() {
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.btn-primary');
+      if (btn) this.createRipple(e, btn);
+    });
   },
 
   setupNav() {

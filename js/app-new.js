@@ -1,6 +1,24 @@
 /* भारत Cultural Atlas — Application Logic & Routing */
 
 // Router & Page Management
+const REGION_ICONS = {
+  north: `<svg class="region-card-icon" viewBox="0 0 56 56" fill="none"><path d="M28 8L38 28H18L28 8Z" stroke="#C9A84C" stroke-width="1.2"/><path d="M12 40h32" stroke="#E8871A" stroke-width="1"/><circle cx="28" cy="44" r="3" fill="#8B1A1A" opacity="0.6"/></svg>`,
+  south: `<svg class="region-card-icon" viewBox="0 0 56 56" fill="none"><path d="M28 6v44M14 20h28M18 36h20" stroke="#1A6B5E" stroke-width="1"/><path d="M20 14l16 28M36 14L20 42" stroke="#C9A84C" stroke-width="0.8" opacity="0.6"/></svg>`,
+  east: `<svg class="region-card-icon" viewBox="0 0 56 56" fill="none"><path d="M8 32c8-12 32-12 40 0" stroke="#8B1A1A" stroke-width="1.2"/><path d="M14 38h28" stroke="#C9A84C" stroke-width="0.8"/><circle cx="28" cy="24" r="6" stroke="#E8871A" stroke-width="1"/></svg>`,
+  west: `<svg class="region-card-icon" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="18" stroke="#E8871A" stroke-width="1"/><path d="M28 10v36M10 28h36" stroke="#C9A84C" stroke-width="0.6" opacity="0.5"/></svg>`,
+  central: `<svg class="region-card-icon" viewBox="0 0 56 56" fill="none"><rect x="14" y="20" width="28" height="24" stroke="#C9A84C" stroke-width="1"/><path d="M14 32h28M28 20v24" stroke="#8B1A1A" stroke-width="0.8" opacity="0.5"/></svg>`,
+  northeast: `<svg class="region-card-icon" viewBox="0 0 56 56" fill="none"><path d="M28 8l4 12h12l-10 8 4 12-10-8-10 8 4-12-10-8h12z" stroke="#2A8B7A" stroke-width="1"/></svg>`,
+};
+
+const TAB_ICONS = {
+  mountain: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20L12 6l8 14H4z"/></svg>`,
+  sun: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>`,
+  lotus: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 4c-3 4-3 8 0 12 3-4 3-8 0-12z"/><path d="M6 14c2 2 4 3 6 4 2-1 4-2 6-4"/></svg>`,
+  script: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 4h12v16H6z"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>`,
+  lamp: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4M10 6h4M8 10c0 4 4 6 4 10h0c0-4 4-6 4-10"/><path d="M6 20h12"/></svg>`,
+  home: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12l8-8 8 8v8H4z"/></svg>`,
+};
+
 const app = {
   currentPage: 'home',
   currentRegion: null,
@@ -87,6 +105,7 @@ const app = {
       <div class="region-card" style="--region-color: ${region.color}" data-region="${region.id}">
         <div class="region-card-bg"></div>
         <div class="region-card-content">
+          ${REGION_ICONS[region.id] || ''}
           <h3>${region.name}</h3>
           <p class="hindi">${region.hindi}</p>
           <p class="descriptor">${region.descriptor}</p>
@@ -106,6 +125,14 @@ const app = {
   },
 
   showRegion(regionId) {
+    const TAB_ICON_MAP = {
+    geography: 'mountain',
+    climate: 'sun',
+    culture: 'lotus',
+    languages: 'script',
+    traditions: 'lamp',
+    lifestyle: 'home'
+    };
     const region = ATLAS_DATA.regions.find(r => r.id === regionId);
     if (!region) return;
 
@@ -137,6 +164,7 @@ const app = {
           ${Object.entries(region.tabs).map(([key, content]) => `
             <div class="tab-pane ${key === 'geography' ? 'active' : ''}" data-tab="${key}">
               <div class="gold-rule"></div>
+              <div class="tab-pane-icon">${TAB_ICONS[TAB_ICON_MAP[key]] || ''}</div>
               <p>${content}</p>
             </div>
           `).join('')}

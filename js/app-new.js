@@ -169,6 +169,14 @@ const app = {
 
       <section class="region-tabs">
         <div class="tabs-header">
+        <select class="tab-select" aria-label="Choose section">
+          <option value="geography">Geography</option>
+          <option value="climate">Climate</option>
+          <option value="culture">Culture</option>
+          <option value="languages">Languages</option>
+          <option value="traditions">Traditions</option>
+          <option value="lifestyle">Lifestyle</option>
+        </select>
           <button class="tab-btn active" data-tab="geography">Geography</button>
           <button class="tab-btn" data-tab="climate">Climate</button>
           <button class="tab-btn" data-tab="culture">Culture</button>

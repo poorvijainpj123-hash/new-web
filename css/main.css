@@ -1331,6 +1331,13 @@ h1, h2, h3, h4 {
 }
 
 /* ─── Mobile Nav ─── */
+.tab-select { display: none; width: 100%; }
+
+@media (max-width: 640px) {
+  .tabs-header .tab-btn { display: none; }
+  .tab-select { display: block; }
+}
+
 .menu-toggle {
   display: none;
   flex-direction: column;

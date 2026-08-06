@@ -221,6 +221,12 @@ const app = {
     `;
 
     // Tab switching
+    page.querySelector('.tab-select')?.addEventListener('change', (e) => {
+      const key = e.target.value;
+        page.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === key));
+        page.querySelectorAll('.tab-pane').forEach(p => p.classList.toggle('active', p.dataset.tab === key));
+    });
+    
     page.querySelectorAll('.tab-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         page.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));

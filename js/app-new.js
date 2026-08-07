@@ -168,14 +168,9 @@ const app = {
         </div>
 
       <section class="region-tabs">
-        <div class="tabs-header">
+        <div class="tab-bar">
         <select class="tab-select" aria-label="Choose section">
-          <option value="geography">Geography</option>
-          <option value="climate">Climate</option>
-          <option value="culture">Culture</option>
-          <option value="languages">Languages</option>
-          <option value="traditions">Traditions</option>
-          <option value="lifestyle">Lifestyle</option>
+          ${Object.keys(region.tabs).map(key => `<option value = "${key}">${key.charAt(0).toUpperCase() + key.slice(1)}`)}
         </select>
           <button class="tab-btn active" data-tab="geography">Geography</button>
           <button class="tab-btn" data-tab="climate">Climate</button>
@@ -184,12 +179,13 @@ const app = {
           <button class="tab-btn" data-tab="traditions">Traditions</button>
           <button class="tab-btn" data-tab="lifestyle">Lifestyle</button>
         </div>
-        <div class="tabs-content">
+        <div class="tab-panels">
           ${Object.entries(region.tabs).map(([key, content]) => `
-            <div class="tab-pane ${key === 'geography' ? 'active' : ''}" data-tab="${key}">
+            <div class="tab-panel ${key === 'geography' ? 'active' : ''}" data-tab="${key}">
+            <div class = "tab-panel-content"> 
               <div class="gold-rule"></div>
-              <div class="tab-pane-icon">${TAB_ICONS[TAB_ICON_MAP[key]] || ''}</div>
               <p>${content}</p>
+              </div>
             </div>
           `).join('')}
         </div>
@@ -221,19 +217,20 @@ const app = {
     `;
 
     // Tab switching
-    page.querySelector('.tab-select')?.addEventListener('change', (e) => {
-      const key = e.target.value;
-        page.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === key));
-        page.querySelectorAll('.tab-pane').forEach(p => p.classList.toggle('active', p.dataset.tab === key));
-    });
     
     page.querySelectorAll('.tab-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         page.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        page.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+        page.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
         e.target.classList.add('active');
-        page.querySelector(`[data-tab="${e.target.dataset.tab}"]`).classList.add('active');
+        page.querySelector(`.tab-panel[data-tab="${e.target.dataset.tab}"]`).classList.add('active');
+        page.querySelector('.tab-select').value = e.target.dataset.tab;
       });
+    });
+    page.querySelector('.tab-select')?.addEventListener('change', (e) => {
+      const key = e.target.value;
+        page.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === key));
+        page.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.dataset.tab === key));
     });
 
     // State card clicks
@@ -324,7 +321,7 @@ const app = {
         page.querySelectorAll('.state-section').forEach(s => s.classList.remove('active'));
         e.target.classList.add('active');
         page.querySelector(`[data-section="${sectionId}"]`).classList.add('active');
-        page.querySelector('[data-section="' + sectionId + '"]').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        page.querySelector('.state-section[data-section="' + sectionId + '"]').scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
 

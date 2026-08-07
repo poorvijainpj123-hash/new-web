@@ -915,10 +915,8 @@ h1, h2, h3, h4 {
 }
 
 .tab-panel.active {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 2rem;
-  align-items: start;
+  display: block;
+  animation: fadeTab 0.4s ease;
 }
 
 @keyframes fadeTab {
@@ -949,6 +947,13 @@ h1, h2, h3, h4 {
 .tab-panel p {
   color: var(--color-text-light);
   margin-bottom: 1rem;
+}
+
+.tab-select { display: none; width: 100%; margin-bottom: 1rem; }
+
+@media (max-width: 640px) {
+  .tab-bar .tab-btn { display: none; }
+  .tab-select { display: block; }
 }
 
 /* ─── State Cards Grid ─── */

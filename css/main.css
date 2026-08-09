@@ -575,7 +575,7 @@ h1, h2, h3, h4 {
   opacity: 1;
 }
 
-.region-card-inner {
+.region-card-content {
   position: relative;
   z-index: 2;
   height: 100%;
@@ -601,7 +601,7 @@ h1, h2, h3, h4 {
   margin-bottom: 0.5rem;
 }
 
-.region-descriptor {
+.descriptor {
   font-family: var(--font-body);
   font-style: italic;
   font-size: 0.9rem;
@@ -868,7 +868,7 @@ h1, h2, h3, h4 {
 }
 
 /* ─── Tabs ─── */
-.tabs-section {
+.region-tabs {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem clamp(1rem, 5vw, 4rem) 3rem;

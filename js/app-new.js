@@ -10,15 +10,6 @@ const REGION_ICONS = {
   northeast: `<svg class="region-card-icon" viewBox="0 0 56 56" fill="none"><path d="M28 8l4 12h12l-10 8 4 12-10-8-10 8 4-12-10-8h12z" stroke="#2A8B7A" stroke-width="1"/></svg>`,
 };
 
-const TAB_ICONS = {
-  mountain: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20L12 6l8 14H4z"/></svg>`,
-  sun: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>`,
-  lotus: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 4c-3 4-3 8 0 12 3-4 3-8 0-12z"/><path d="M6 14c2 2 4 3 6 4 2-1 4-2 6-4"/></svg>`,
-  script: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 4h12v16H6z"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>`,
-  lamp: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4M10 6h4M8 10c0 4 4 6 4 10h0c0-4 4-6 4-10"/><path d="M6 20h12"/></svg>`,
-  home: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12l8-8 8 8v8H4z"/></svg>`,
-};
-
 const app = {
   currentPage: 'home',
   currentRegion: null,
@@ -119,7 +110,6 @@ const app = {
     const grid = document.getElementById('regions-grid');
     grid.innerHTML = ATLAS_DATA.regions.map(region => `
       <div class="region-card" style="--region-color: ${region.color}" data-region="${region.id}">
-        <div class="region-card-bg"></div>
         <div class="region-card-content">
           ${REGION_ICONS[region.id] || ''}
           <h3>${region.name}</h3>

@@ -744,6 +744,8 @@ h1, h2, h3, h4 {
   justify-content: flex-end;
   overflow: hidden;
   background: color-mix(in srgb, var(--region-color) 30%, white);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08), inset 0 2px 12px rgba(0, 0, 0, 0.04);
 }
 
 .region-banner-layout {

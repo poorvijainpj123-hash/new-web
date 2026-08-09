@@ -869,7 +869,7 @@ h1, h2, h3, h4 {
 
 /* ─── Tabs ─── */
 .region-tabs {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem clamp(1rem, 5vw, 4rem) 3rem;
   background: var(--color-bg-elevated);

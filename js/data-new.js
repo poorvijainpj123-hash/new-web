@@ -10,11 +10,48 @@ const ATLAS_DATA = {
       descriptor: 'Peaks, Plains & Prayers',
       overview: 'Crowned by the Himalayas, North India is the cradle of ancient civilizations and spiritual awakening.',
       tabs: {
-        geography: 'North India is a large area in the northern part of India. It is not always defined the same way, but it generally includes several states and union territories. The main natural features are the huge Indus-Gangetic Plain and the mighty Himalayas mountains. These mountains separate North India from the Tibetan Plateau and Central Asia.Different government groups define North India slightly differently. For example, the Ministry of Home Affairs includes states like Haryana, Himachal Pradesh, Jammu and Kashmir, Punjab, and Rajasthan. It also includes the Union Territories of Delhi and Chandigarh. The Ministry of Culture, however, includes Uttarakhand but not Delhi. The Geological Survey of India includes Uttar Pradesh and Delhi, but not Rajasthan or Chandigarh. Sometimes, other states like Bihar, Gujarat, Madhya Pradesh, and West Bengal are also considered part of North India.This region has been a very important historical center. Powerful empires like the Mughal Empire, the Delhi Sultanate, and the British Indian Empire once ruled here. North India has a rich and varied culture. It is home to many important pilgrimage sites for different religions. These include Hindu places like Varanasi and Vaishno Devi. There are also Buddhist sites like Sarnath and Kushinagar. For Sikhs, the Golden Temple is a very sacred place.North India also has many famous World Heritage Sites. These include the Nanda Devi Biosphere Reserve, the Khajuraho temples, and the Taj Mahal. The main official languages spoken in this region are Hindi, Urdu, Punjabi, and English.',
-        climate: 'North India experiences four distinct seasons with cold winters and hot, dry summers. Monsoons bring relief from June to September, transforming parched lands into verdant fields.',
-        culture: 'North India is the heartland of Sanskrit, Mughal architecture, and classical Indian traditions. The region blends Hindu, Islamic, and Buddhist influences, creating a rich tapestry of art, philosophy, and spirituality.',
-        languages: 'Hindi is the dominant language, spoken alongside Punjabi, Urdu, and Sanskrit. Devanagari script is used for most local languages.',
-        traditions: 'Yoga, meditation, pilgrimage, and classical music flourish here. The region celebrates Holi, Diwali, and Durga Puja with great fervor.',
+        geography: `North India is mostly located on the main landmass of India, north of the peninsular part. To the north, the Himalayas form a natural boundary between the Indian subcontinent and the Tibetan plateau. To the west, you will find the Thar desert, which is shared with Pakistan. Beyond the Aravalli Range to the west is the state of Gujarat. Some people consider the Vindhya mountains as the southern edge of North India.
+
+        The main geographical features of North India are
+
+        The Indo-Gangetic Plain, a large flat area covering states like Punjab, Haryana, Uttar Pradesh, and parts of Bihar and West Bengal.
+        The Himalayas, towering mountains found in Uttarakhand, Himachal Pradesh, and Jammu and Kashmir.
+        The Thar Desert, a large desert mainly in Rajasthan.
+        States like Madhya Pradesh, Himachal Pradesh, Uttarakhand, and Chhattisgarh also have large areas covered by forests.`,
+        climate: `North India is mostly in the northern temperate zone of the Earth. This means it generally has cool or cold winters, hot summers, and moderate monsoon rains. However, North India has a very diverse climate.
+
+During summer, temperatures often go above 35 °C (95 °F) across the Indo-Gangetic plain. In the Thar desert and Rajasthan, it can reach as high as 50 °C (122 °F). Delhi can also get up to 49 °C (120 °F). In winter, temperatures on the plains can drop below 5 °C (41 °F), and even below freezing in some states. Himachal Pradesh, Jammu and Kashmir, and Uttarakhand get heavy snowfall. Many parts of North India are known for thick fog during winters.
+
+Some places have seen extreme temperatures. Dras in Jammu and Kashmir recorded -45 °C (-49 °F). It is one of the coldest inhabited places on Earth. Alwar, Rajasthan, recorded a high of 50.6 °C (123 °F).`,
+        culture: `North Indian culture has been shaped by influences from Central Asia and Afghanistan. This includes changes in language and traditions. Even before the arrival of Islam, groups like the Kushan Empire from Bactria (modern-day Afghanistan) had a big impact. They even had twin capitals, one in Mathura (India) and one in Peshawar (Pakistan).`,
+        languages: `The Northern Indo-Aryan languages, also known as Pahāṛi languages, are a group of Indo-Aryan languages. People speak these languages in the lower parts of the Himalayas. This region stretches from Nepal in the east to parts of India. These Indian states include Jammu and Kashmir, Uttarakhand, Himachal Pradesh, and Punjab.
+
+The word 'Pahar' means 'mountain' in many local languages. This includes Nepali and Hindi. Because these languages are spoken in the Himalayan region, they are also called Himalayan languages. Like other languages in this area, Pahari languages belong to the Indo-European family. More specifically, they are part of the Indo-Iranian branch. The name "Pahari languages" was first used by a scholar named G. A. Grierson.`,
+        traditions: `In North Indian traditions, there are six distinct seasons:
+
+Summer (grishma or garmi): May–June
+Rainy (varsha): July–August
+Cool (sharad): September–October (early autumn)
+Autumn (hemant or patjhar): November–December (leaf-fall)
+Winter (shishir or sardi): January–February
+Spring (vasant): March–April
+These seasons are often mentioned in the region's literature, poetry, and folklore. In mountainous areas, winter is sometimes divided into "big winter" and "little winter."
+
+People and Religions of North India
+Most people in North India belong to the Indo-Aryan language group. This includes various ethnic groups like Brahmins, Rajputs, Banias, Jats, and Dalits. There are also smaller groups who speak Dravidian, Tibeto-Burman, and Austroasiatic languages.
+
+Religions Practiced
+Hinduism is the main religion in North India. Many other religions are also practiced by different communities:
+
+Islam
+Sikhism
+Jainism
+Zoroastrianism
+Judaism
+Bahá'í
+Christianity
+Buddhism
+States like Uttarakhand, Rajasthan, Haryana, Madhya Pradesh, Gujarat, and Himachal Pradesh are mostly Hindu. Uttar Pradesh, Bihar, and West Bengal have Hindu majorities, but also a large number of Muslims. Jammu and Kashmir is a Muslim-majority state. Punjab has a Sikh-majority population.`,
         lifestyle: 'From bustling Delhi to spiritual Varanasi, North India balances modernity with ancient traditions. Agriculture remains central, though cities are rapidly urbanizing.'
       },
       states: [

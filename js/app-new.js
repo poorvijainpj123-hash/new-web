@@ -10,6 +10,15 @@ const REGION_ICONS = {
   northeast: `<svg class="region-card-icon" viewBox="0 0 56 56" fill="none"><path d="M28 8l4 12h12l-10 8 4 12-10-8-10 8 4-12-10-8h12z" stroke="#2A8B7A" stroke-width="1"/></svg>`,
 };
 
+function renderParagraphs(text) {
+  return text
+    .split(/\n\s*\n/)
+    .map(para => para.trim())
+    .filter(para => para.length > 0)
+    .map(para => `<p>${para}</p>`)
+    .join('');
+}
+
 const app = {
   currentPage: 'home',
   currentRegion: null,
@@ -58,7 +67,7 @@ const app = {
 
   window.addEventListener('scroll', onScroll, { passive: true });
   },
-
+   
   setupNav() {
     // Mobile menu toggle
     const menuToggle = document.querySelector('.menu-toggle');
@@ -174,7 +183,7 @@ const app = {
             <div class="tab-panel ${key === 'geography' ? 'active' : ''}" data-tab="${key}">
             <div class = "tab-panel-content"> 
               <div class="gold-rule"></div>
-              <p>${content}</p>
+              ${renderParagraphs(content)}
               </div>
             </div>
           `).join('')}
@@ -288,7 +297,7 @@ const app = {
                   </div>
                 `).join('')}
               </div>
-            ` : `<p>${content}</p>`}
+            ` : renderParagraphs(content)}
           </section>
         `).join('')}
       </div>

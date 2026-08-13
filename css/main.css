@@ -946,6 +946,20 @@ h1, h2, h3, h4 {
   padding-left: 1.5rem;
 }
 
+
+.tab-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--color-cream);
+  color: var(--color-cream);
+  opacity: 1;
+  transition: opacity var(--transition);
+}
+
 .tab-panel p {
   color: var(--color-text-dark);
   margin-bottom: 1rem;

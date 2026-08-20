@@ -129,10 +129,10 @@ States like Uttarakhand, Rajasthan, Haryana, Madhya Pradesh, Gujarat, and Himach
       descriptor: 'Temples, Spices & Serenity',
       overview: 'South India is a realm of ancient temples, classical arts, and thriving traditions where spirituality and creativity flourish.',
       tabs: {
-        geography: 'The Deccan Plateau dominates with the Western and Eastern Ghats framing the coasts. The Arabian Sea, Indian Ocean, and Bay of Bengal bathe the region in tropical warmth.',
-        climate: 'South India enjoys a tropical climate with monsoons bringing abundant rain. Coastal areas have year-round warmth and humidity perfect for spice cultivation.',
+        geography: `South India is mostly a peninsula. This means it is surrounded by water on three sides. The Arabian Sea is to the west, the Bay of Bengal is to the east, and the Indian Ocean is to the south. The Western Ghats and Eastern Ghats are two mountain ranges that run along the coasts. The highest point in South India is Anamudi peak in Kerala. It stands at 2,695 meters (8,842 feet) tall.`,
+        climate: `The climate in South India is mostly tropical. This means it is warm all year round. The region gets a lot of rain, especially during the monsoon season. This helps the land stay green and fertile.`,
         culture: 'Known as the heartland of Dravidian civilization, South India preserves Vedic traditions in temples, classical arts like Bharatanatyam, and ancient languages like Tamil and Telugu.',
-        languages: 'Tamil, Telugu, Kannada, and Malayalam are major languages, each with distinct scripts and rich literary traditions dating back millennia.',
+        languages: `The people of South India are diverse. They speak several different languages. The main languages are Tamil, Telugu, Kannada, and Malayalam. These languages belong to the Dravidian language family. English and Urdu are also spoken in some areas.`,
         traditions: 'Temple festivals, classical dance and music, meditation, and pilgrimage are deeply woven into daily life. Music and arts are revered.',
         lifestyle: 'South India balances ancient wisdom with modern innovation. IT hubs like Bangalore thrive alongside ancient pilgrimage centers and spice markets.'
       },
